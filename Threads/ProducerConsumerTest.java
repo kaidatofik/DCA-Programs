@@ -12,7 +12,7 @@ public class ProducerConsumerTest {
 
 class Stores 
 {
-    private int contents;
+    private int contents;  // hello world//
     private boolean available = false;
     public synchronized int get() {
         while (available == false) {
