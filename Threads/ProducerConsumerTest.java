@@ -10,12 +10,14 @@ public class ProducerConsumerTest {
     }
 }
 
-class Stores {
+class Stores 
+{
     private int contents;
     private boolean available = false;
     public synchronized int get() {
         while (available == false) {
-            try {
+            try 
+            {
               wait();
             } catch (InterruptedException e) { }
         }
@@ -25,9 +27,11 @@ class Stores {
     }
     public synchronized void put(int value) {
         while (available == true) {
-            try {
+            try
+            {
                 wait();
-            } catch (InterruptedException e) { }
+            }
+            catch (InterruptedException e) { }
         } contents = value;
         available = true;
         notifyAll();
